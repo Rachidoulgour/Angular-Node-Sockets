@@ -10,8 +10,10 @@ import cors from 'cors';
 
 const server = new Server();
 
+//CORS
 server.app.use(cors())
 
+//ROUTES
 server.app.use('/', router)
 
 
