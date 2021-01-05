@@ -19,6 +19,14 @@ export default class Server{
         this.io = (socketIO as any)(this.httpServer);
     }
 
+    private listenSockets(){
+        console.log('Listening to events')
+
+        this.io.on('connection', client =>{
+            console.log('New client connected')
+        })
+    }
+
     start(callback: Function){
         this.httpServer.listen(this.port, callback());
     }
